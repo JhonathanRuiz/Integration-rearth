@@ -1,165 +1,132 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="principal.aspx.cs" Inherits="Rearth.principal" %>
+<html lang="es">
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="./assets/img/favicon.png"
-      type="image/x-icon"
-    />
-              <!-- Alertify-->
-        <script src="assets/js/alertify.min.js"></script>
-        <link href="assets/css/alertify.min.css" rel="stylesheet" />
-    <!--BOOTSTRAP 5.1.3-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    <!--BOOTSTRAP ICONS 1.7.1-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css"
-    />
-    <link rel="stylesheet" href="./assets/css/register.css" />
-    <title>Rearth - Iniciar Sesión</title>
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+       Rearh
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <!--BOOTSTRAP ICONS 1.7.1-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" />
+  <!-- CSS Files -->
+  <link href="assets/css/material-dashboard.min.css" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="assets/css/styles.css" rel="stylesheet" />
 </head>
+
 <body>
-    <form id="form1" runat="server">
-     <div class="container-fluid">
-      <div class="row">
-        <div class="col">
-          <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#"
-                ><img
-                  src="./assets/img/logo-rearth.png"
-                  class="img-fluid"
-                  style="width: 5em"
-                  alt=""
-              /></a>
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div
-                class="offcanvas offcanvas-end"
-                tabindex="-1"
-                id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel"
-              >
-                <div
-                  class="d-flex flex-column flex-shrink-0 p-3 bg-light"
-                  style="width: auto; height: 100vh"
-                >
-                  <button
-                    type="button"
-                    class="btn-close text-reset"
-                    data-bs-dismiss="offcanvas"
-                    aria-label="Close"
-                  ></button>
-                  <a
-                    href="/"
-                    class="
-                      d-flex
-                      align-items-center
-                      mb-3 mb-md-0
-                      me-md-auto
-                      link-dark
-                      text-decoration-none
-                    "
-                  >
-                    <img
-                      src="./assets/img/logo-rearth.png"
-                      class="img-fluid"
-                      alt=""
-                    />
-                  </a>
-                  <hr />
-                  <ul class="nav nav-pills flex-column mb-auto">
-                    <li class="nav-item">
-                      <a href="#" class="nav-link active" aria-current="page">
-                        <i class="bi bi-geo"></i>
-                        Solicitar recogida
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="nav-link link-dark">
-                        <i class="bi bi-list-ul"></i>
-                        Ver recogidas anteriores
-                      </a>
-                    </li>
-                  </ul>
-                  <hr />
-                  <div class="dropup">
-                    <a
-                      href="#"
-                      class="
-                        d-flex
-                        align-items-center
-                        link-dark
-                        text-decoration-none
-                        dropdown-toggle
-                      "
-                      id="dropdownUser2"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      <i class="bi bi-person-circle iuser mx-1"></i>
-                      <strong>Nombre Apellido</strong>
-                    </a>
-                    <ul
-                      class="dropdown-menu text-small shadow"
-                      aria-labelledby="dropdownUser2"
-                    >
-                      <li>
-                        <a class="dropdown-item" href="#"
-                          >Mis datos personales</a
-                        >
-                      </li>
-                      <li><hr class="dropdown-divider" /></li>
-                      <li>
-                        <a class="dropdown-item" href="#">Cerrar sesión</a>
-                      </li>
-                    </ul>
+    <form runat="server">
+  <div class="wrapper ">
+     <div class="sidebar navbar-collapse"  runat="server" ID="menuO" data-color="purple" data-background-color="white">
+    </div>
+
+
+    <div class="main-panel">
+       <!-- Navbar -->
+       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <a class="navbar-brand" href="javascript:;">Dashboard</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end">
+        
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="container-fluid">
+            <h2 class="title-green">Bienvenido <span runat="server" id="nombre">Nombre</span></h2>
+          <div class="row">
+      
+            <div class="col-md-4 border-color">
+              <!-- small box -->
+              <div class="small-box box-round">
+                <div class="inner">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <h3 class="title-green">53<sup style="font-size: 20px">%</sup></h3>
+      
+                      <p>Tus solicitudes actuales</p>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-end">
+                       <img src="assets/img/leaf.png" alt="" class="img-fluid">
+                    </div>
                   </div>
+                
                 </div>
+                
               </div>
             </div>
-          </nav>
+
+
+            <div class="col-md-4 border-color">
+              <!-- small box -->
+              <div class="small-box box-round">
+                <div class="inner">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <h3 class="title-green">53<sup style="font-size: 20px">%</sup></h3>
+      
+                      <p>Solictudes Completadas</p>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-end">
+                       <img src="assets/img/leaf.png" alt="" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+
+
+            <div class="col-md-4 border-color">
+              <!-- small box -->
+              <div class="small-box box-round">
+                <div class="inner">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <h3 class="title-green">53<sup style="font-size: 20px">%</sup></h3>
+                      <p>Puntos conseguidos</p>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-end">
+                       <img src="assets/img/leaf.png" alt="" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+               
+              </div>
+            </div>
+            <!-- ./col -->
+          </div>
+
+            <a href="" class="btn btn-success my-4">Crear Solicitud</a>
+
         </div>
       </div>
     </div>
-    <!--MAIN-->
-    <section id="bienvenida">
-      <div class="container py-5">
-        <div class="row d-flex justify-content-around align-items-center">
-          <div class="col-xl-10">
-            <div class="card rounded-3 text-black">
-              <h1 class="montse">Bienvenido <span runat="server" id="nombre"></span></h1>
-                <p>Aquí puedes gestionar tus solicitudes y modificar tus datos personales.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--END MAIN-->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
-    </form>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="assets/js/script.js"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous"
+></script>
+        </form>
 </body>
+
 </html>

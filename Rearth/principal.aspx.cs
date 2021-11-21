@@ -22,7 +22,10 @@ namespace Rearth
             else {
                 UsuariosServices.Modelo modelo = new UsuariosServices.Modelo();
                 modelo = (UsuariosServices.Modelo)HttpContext.Current.Session["usuario"];
-                nombre.InnerHtml = modelo.Nombre;
+                nombre.InnerText = modelo.Nombre;
+                Utilidad utilidad = new Utilidad();
+                menuO.InnerHtml = utilidad.Menu(modelo.idRol);
+             
             }
         }
     }

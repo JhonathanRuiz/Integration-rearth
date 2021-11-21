@@ -45,5 +45,57 @@ namespace Rearth.Negocio
                 return lista;
             }
         }
+
+        public Lista llamarUsuarios(String id)
+        {
+            try
+            {
+
+                lista = usuarios.ConsultaIdSOAP(id);
+                return lista;
+
+            }
+            catch (Exception e)
+            {
+                Lista lista = new Lista();
+                lista.Mensaje = e.Message;
+                return lista;
+            }
+        }
+
+
+        public Lista Editar(UsuariosServices.Modelo usuario)
+        {
+            try
+            {
+
+                lista = usuarios.Editar(usuario, "N4rGl83wGSdZoF1fguNIA1gAmTA2");
+                return lista;
+
+            }
+            catch (Exception e)
+            {
+                Lista lista = new Lista();
+                lista.Mensaje = e.Message;
+                return lista;
+            }
+        }
+
+        public Lista Eliminar(String Id)
+        {
+            try
+            {
+
+                lista = usuarios.Eliminar(Id, "N4rGl83wGSdZoF1fguNIA1gAmTA2");
+                return lista;
+
+            }
+            catch (Exception e)
+            {
+                Lista lista = new Lista();
+                lista.Mensaje = e.Message;
+                return lista;
+            }
+        }
     }
 }

@@ -5,6 +5,13 @@ body {
   font-weight: 400;
 }
 
+/* Font */
+h1,h2,h3,h4,h5{
+  font-family: 'Montserrat', sans-serif;
+}
+p{
+  font-family: "Nunito", sans-serif;
+}
 /* Navegación */
 
 nav {
@@ -342,3 +349,15 @@ section {
   color: #000;
   text-decoration: none;
 }
+
+.box-round{
+  border:  1px solid #a6c732;
+    border-radius: 10px;
+    padding: 20px;
+    min-height:200px;
+}
+.title-green{
+  font-weight: bold;
+  color: #a6c732;
+}
+

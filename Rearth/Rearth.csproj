@@ -70,24 +70,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\css\alertify.min.css" />
     <Content Include="assets\css\login.css" />
+    <Content Include="assets\css\material-dashboard.min.css" />
+    <Content Include="assets\css\panel.css" />
     <Content Include="assets\css\register.css" />
-    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\styles.css" />
+    <Content Include="assets\css\tablas.css" />
     <Content Include="assets\img\favicon.png" />
     <Content Include="assets\img\intro-bg.jpg" />
     <Content Include="assets\img\jruiz.jpg" />
+    <Content Include="assets\img\leaf.png" />
     <Content Include="assets\img\logo-rearth.png" />
     <Content Include="assets\img\recicle.png" />
     <Content Include="assets\img\smartinez.jpg" />
     <Content Include="assets\img\wroldan.jpeg" />
-    <Content Include="assets\js\alertify.min.js" />
+    <Content Include="assets\js\script.js" />
+    <Content Include="editProfile.aspx" />
     <Content Include="login.aspx" />
     <Content Include="principal.aspx" />
     <Content Include="register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="editProfile.aspx.cs">
+      <DependentUpon>editProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editProfile.aspx.designer.cs">
+      <DependentUpon>editProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Negocio\UsuariosConsumo.cs" />
     <Compile Include="principal.aspx.cs">
       <DependentUpon>principal.aspx</DependentUpon>
@@ -116,6 +127,7 @@
     <Compile Include="register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Utilidad\Utilidad.cs" />
     <Compile Include="Web References\UsuariosServices\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Rearth.Vista
+namespace Rearth
 {
 
 

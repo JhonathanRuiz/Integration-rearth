@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Rearth.Vista
+namespace Rearth
 {
     public partial class login : System.Web.UI.Page
     {

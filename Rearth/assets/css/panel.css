@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&family=Nunito:ital@0;1&family=Quicksand&display=swap");
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+}
+
+.montse {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+.btn-outline-success{
+  color: #a6c732;
+  border-color: #a6c732;
+}
+
+.btn-outline-success:hover{
+  color: #fff;
+  border-color: #739600;
+  background-color: #739600;
+}
+
+.btn-success{
+color: #fff;
+border-color: #a6c732;
+background-color: #a6c732;
+}
+
+.btn-success:hover{
+color: #fff;
+border-color: #739600;
+background-color: #739600;
+}
+
