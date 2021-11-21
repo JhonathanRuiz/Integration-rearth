@@ -5,5 +5,11 @@
     <Setting Name="Rearth_net_azurewebsites_rearthserv20211119182633_Usuarios" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">https://rearthserv20211119182633.azurewebsites.net/Usuarios.asmx</Value>
     </Setting>
+    <Setting Name="Rearth_EntradaService_Entrada" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://rearthserv20211119182633.azurewebsites.net/Entrada.asmx</Value>
+    </Setting>
+    <Setting Name="Rearth_PuntoRecoleccion_PuntosRecoleccion" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://rearthserv20211119182633.azurewebsites.net/PuntosRecoleccion.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

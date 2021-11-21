@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Version">
+        <s:complexType />
+      </s:element>
+      <s:element name="VersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaSOAP">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConsultaSOAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConsultaSOAPResult" type="tns:Lista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Lista">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Respuesta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Listado" type="tns:ArrayOfModelo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfModelo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Modelo" type="tns:Modelo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Modelo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdUsuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdPuntoR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fecha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Hora" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaIdSOAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaIdSOAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConsultaIdSOAPResult" type="tns:Lista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaREST">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConsultaRESTResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConsultaIdREST">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaIdRESTResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Agregar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Objeto" type="tns:Modelo" />
+            <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgregarResult" type="tns:Lista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Editar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Objeto" type="tns:Modelo" />
+            <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EditarResult" type="tns:Lista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eliminar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminarResult" type="tns:Lista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="VersionSoapIn">
+    <wsdl:part name="parameters" element="tns:Version" />
+  </wsdl:message>
+  <wsdl:message name="VersionSoapOut">
+    <wsdl:part name="parameters" element="tns:VersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaSOAPSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaSOAP" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaSOAPSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaSOAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaIdSOAPSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaIdSOAP" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaIdSOAPSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaIdSOAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaRESTSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaREST" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaRESTSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaRESTResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaIdRESTSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaIdREST" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaIdRESTSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaIdRESTResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarSoapIn">
+    <wsdl:part name="parameters" element="tns:Agregar" />
+  </wsdl:message>
+  <wsdl:message name="AgregarSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditarSoapIn">
+    <wsdl:part name="parameters" element="tns:Editar" />
+  </wsdl:message>
+  <wsdl:message name="EditarSoapOut">
+    <wsdl:part name="parameters" element="tns:EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarSoapIn">
+    <wsdl:part name="parameters" element="tns:Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="EliminarSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="EntradaSoap">
+    <wsdl:operation name="Version">
+      <wsdl:input message="tns:VersionSoapIn" />
+      <wsdl:output message="tns:VersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSOAP">
+      <wsdl:input message="tns:ConsultaSOAPSoapIn" />
+      <wsdl:output message="tns:ConsultaSOAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaIdSOAP">
+      <wsdl:input message="tns:ConsultaIdSOAPSoapIn" />
+      <wsdl:output message="tns:ConsultaIdSOAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaREST">
+      <wsdl:input message="tns:ConsultaRESTSoapIn" />
+      <wsdl:output message="tns:ConsultaRESTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaIdREST">
+      <wsdl:input message="tns:ConsultaIdRESTSoapIn" />
+      <wsdl:output message="tns:ConsultaIdRESTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Agregar">
+      <wsdl:input message="tns:AgregarSoapIn" />
+      <wsdl:output message="tns:AgregarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Editar">
+      <wsdl:input message="tns:EditarSoapIn" />
+      <wsdl:output message="tns:EditarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Eliminar">
+      <wsdl:input message="tns:EliminarSoapIn" />
+      <wsdl:output message="tns:EliminarSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EntradaSoap" type="tns:EntradaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Version">
+      <soap:operation soapAction="http://tempuri.org/Version" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSOAP">
+      <soap:operation soapAction="http://tempuri.org/ConsultaSOAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaIdSOAP">
+      <soap:operation soapAction="http://tempuri.org/ConsultaIdSOAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaREST">
+      <soap:operation soapAction="http://tempuri.org/ConsultaREST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaIdREST">
+      <soap:operation soapAction="http://tempuri.org/ConsultaIdREST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Agregar">
+      <soap:operation soapAction="http://tempuri.org/Agregar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Editar">
+      <soap:operation soapAction="http://tempuri.org/Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eliminar">
+      <soap:operation soapAction="http://tempuri.org/Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EntradaSoap12" type="tns:EntradaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Version">
+      <soap12:operation soapAction="http://tempuri.org/Version" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSOAP">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaSOAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaIdSOAP">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaIdSOAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaREST">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaREST" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaIdREST">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaIdREST" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Agregar">
+      <soap12:operation soapAction="http://tempuri.org/Agregar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Editar">
+      <soap12:operation soapAction="http://tempuri.org/Editar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eliminar">
+      <soap12:operation soapAction="http://tempuri.org/Eliminar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Entrada">
+    <wsdl:port name="EntradaSoap" binding="tns:EntradaSoap">
+      <soap:address location="https://rearthserv20211119182633.azurewebsites.net/Entrada.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EntradaSoap12" binding="tns:EntradaSoap12">
+      <soap12:address location="https://rearthserv20211119182633.azurewebsites.net/Entrada.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

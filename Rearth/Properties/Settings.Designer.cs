@@ -32,5 +32,25 @@ namespace Rearth.Properties {
                 return ((string)(this["Rearth_net_azurewebsites_rearthserv20211119182633_Usuarios"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://rearthserv20211119182633.azurewebsites.net/Entrada.asmx")]
+        public string Rearth_EntradaService_Entrada {
+            get {
+                return ((string)(this["Rearth_EntradaService_Entrada"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://rearthserv20211119182633.azurewebsites.net/PuntosRecoleccion.asmx")]
+        public string Rearth_PuntoRecoleccion_PuntosRecoleccion {
+            get {
+                return ((string)(this["Rearth_PuntoRecoleccion_PuntosRecoleccion"]));
+            }
+        }
     }
 }

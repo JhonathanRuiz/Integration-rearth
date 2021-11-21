@@ -84,9 +84,11 @@
     <Content Include="assets\img\recicle.png" />
     <Content Include="assets\img\smartinez.jpg" />
     <Content Include="assets\img\wroldan.jpeg" />
+    <Content Include="assets\js\maps.js" />
     <Content Include="assets\js\script.js" />
     <Content Include="editProfile.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="nuevoPedido.aspx" />
     <Content Include="principal.aspx" />
     <Content Include="register.aspx" />
     <Content Include="Web.config" />
@@ -100,6 +102,13 @@
       <DependentUpon>editProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Negocio\UsuariosConsumo.cs" />
+    <Compile Include="nuevoPedido.aspx.cs">
+      <DependentUpon>nuevoPedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nuevoPedido.aspx.designer.cs">
+      <DependentUpon>nuevoPedido.aspx</DependentUpon>
+    </Compile>
     <Compile Include="principal.aspx.cs">
       <DependentUpon>principal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -128,6 +137,16 @@
       <DependentUpon>register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilidad\Utilidad.cs" />
+    <Compile Include="Web References\EntradaService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PuntoRecoleccionService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\UsuariosServices\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -150,6 +169,22 @@
     <Content Include="Web References\UsuariosServices\ListaRol1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
+    <None Include="Web References\EntradaService\Entrada.wsdl" />
+    <Content Include="Web References\EntradaService\Lista.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\EntradaService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\PuntoRecoleccionService\Lista1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\PuntoRecoleccionService\PuntosRecoleccion.wsdl" />
+    <Content Include="Web References\PuntoRecoleccionService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <None Include="Web References\UsuariosServices\Usuarios.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -166,6 +201,28 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="https://rearthserv20211119182633.azurewebsites.net/Entrada.asmx%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\EntradaService\</RelPath>
+      <UpdateFromURL>https://rearthserv20211119182633.azurewebsites.net/Entrada.asmx%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Rearth_EntradaService_Entrada</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://rearthserv20211119182633.azurewebsites.net/PuntosRecoleccion.asmx%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PuntoRecoleccionService\</RelPath>
+      <UpdateFromURL>https://rearthserv20211119182633.azurewebsites.net/PuntosRecoleccion.asmx%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Rearth_PuntoRecoleccion_PuntosRecoleccion</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="https://rearthserv20211119182633.azurewebsites.net/Usuarios.asmx%3fwsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\UsuariosServices\</RelPath>
